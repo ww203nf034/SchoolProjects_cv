@@ -36,7 +36,6 @@ f_80_percentage<-function(x){
 
 
 # STEP 2 : apply the functions to every questionnaire
-
 # create a vector for each type of questionnaires
 months<-c("8_15_days", "1_month", "2_months", "3_months", "4_months", "5_months", "6_months", 
           "7_months", "8_months", "9_months", "11_months", "12_months", "16_months", "18_months",
@@ -45,10 +44,8 @@ months<-c("8_15_days", "1_month", "2_months", "3_months", "4_months", "5_months"
 # apply the function to each questionnaires
 eighty<-lapply(months, f_80_percentage)
 
-# create the first table to the merge table to union the reset of the questionnaires
+# create the first table to the merge / output table to union the reset of the questionnaires
 merge<-as.data.table(eighty[1])
-
-# create the first table to the output to union the rest of the questionnaires
 output<-as.data.table(eighty[1])
 
 # transfer all the list into data table and union them 
@@ -322,11 +319,3 @@ ggplot(merge_gov_df, aes(x=analysis_id, y=gov))+
   geom_point(aes(size=total))+        
   theme_minimal()+
   labs(title='Grade Analysis According to Government Critiria', x='Analysis Grade', y='')
-
-
-
-
-
-
-
-
