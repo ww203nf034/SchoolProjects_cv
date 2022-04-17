@@ -15,7 +15,7 @@ package.check <- lapply(
 )
 
 # TASK1 : identify invalid questions whose correct answers rate is greater then 80 % or less then 5 % 
-# the process is repeated so here I only take the "correct answers rate > 80% for example"
+# the process is repeated so here I only take the "correct answers rate > 80%" for example
 
 # STEP 1 : write a function to count the percentage
 f_80_percentage<-function(x){
